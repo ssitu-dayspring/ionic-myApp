@@ -1,14 +1,62 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
+<style>
+    .header ion-item {
+        background: #f9fafb;
+    }
+
+    .content ion-card-content {
+        height: 100px;
+        overflow-y: auto;
+    }
+
+    ion-card {
+        height: 500px;
+    }
+</style>
+
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12 col-lg-4 *ngFor="let review of movieReviews | async">
+                <ion-card>
+                    <div class="header">
+                        <ion-item>
+                            <h2>{{ review.movie }}</h2>
+                            <p>{{ review.releaseDate }}</p>
+                        </ion-item>
+                    </div>
+
+                    <div class="content">
+                        <ion-item>
+                            <p>{{ review.rating }} Star(s)</p>
+                        </ion-item>
+
+                        <ion-card-header>{{ review.title }}</ion-card-header>
+                        <ion-card-content>{{ review.review }}</ion-card-content>
+
+                        <ion-item-divider></ion-item-divider>
+                        <ion-item>
+                            <h3>Director</h3>
+                            <p>{{ review.director.name }}</p>
+                        </ion-item>
+
+                        <ion-item-divider></ion-item-divider>
+                        <ion-item>
+                            <h3>Cast</h3>
+                            <p *ngFor="let actor of review.actors">
+                                {{ actor.name }}
+                            </p>
+                        </ion-item>
+                    </div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

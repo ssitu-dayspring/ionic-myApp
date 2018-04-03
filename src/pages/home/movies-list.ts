@@ -18,9 +18,5 @@ export class MoviesListPage {
         private personnelData: PersonnelData
     ) {
         this.movieReviews = this.personnelData.load();
-
-        this.movieReviews.subscribe((data) => {
-            console.log(data);
-        });
     }
 }
