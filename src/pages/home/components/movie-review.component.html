@@ -1,0 +1,31 @@
+<ion-card>
+    <div class="header">
+        <ion-item>
+            <h2>{{ movieReview.movie }}</h2>
+            <p>{{ movieReview.releaseDate }}</p>
+        </ion-item>
+    </div>
+
+    <div class="content">
+        <ion-item>
+            <p>{{ movieReview.rating }} Star(s)</p>
+        </ion-item>
+
+        <ion-card-header>{{ movieReview.title }}</ion-card-header>
+        <ion-card-content>{{ movieReview.review }}</ion-card-content>
+
+        <ion-item-divider></ion-item-divider>
+        <ion-item>
+            <h3>Director</h3>
+            <p>{{ movieReview.director.name }}</p>
+        </ion-item>
+
+        <ion-item-divider></ion-item-divider>
+        <ion-item>
+            <h3>Cast</h3>
+            <p *ngFor="let actor of movieReview.actors">
+                {{ actor.name }}
+            </p>
+        </ion-item>
+    </div>
+</ion-card>

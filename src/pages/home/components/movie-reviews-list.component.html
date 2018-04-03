@@ -1,0 +1,8 @@
+<ion-grid>
+    <ion-row>
+        <ion-col col-12 col-lg-4 *ngFor="let review of movieReviews">
+            <movie-review [movieReview]="review"></movie-review>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+

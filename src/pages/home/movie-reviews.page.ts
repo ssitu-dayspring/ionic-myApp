@@ -7,10 +7,10 @@ import { PersonnelData } from '../../providers/personnel-data';
 import { Review } from '../../models/review';
 
 @Component({
-    selector: 'movies-list',
-    templateUrl: 'movies-list.html'
+    selector: 'movie-reviews',
+    templateUrl: './movie-reviews.page.html'
 })
-export class MoviesListPage {
+export class MovieReviewsPage {
     movieReviews: Observable<Review[]>;
 
     constructor(

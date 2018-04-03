@@ -7,14 +7,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { MoviesListPage } from '../pages/home/movies-list';
+import { MovieReviewsListComponent } from '../pages/home/components/movie-reviews-list.component';
+import { MovieReviewComponent } from '../pages/home/components/movie-review.component';
+
+import { MovieReviewsPage } from '../pages/home/movie-reviews.page';
 
 import { PersonnelData } from '../providers/personnel-data';
 
 @NgModule({
     declarations: [
         MyApp,
-        MoviesListPage
+        MovieReviewsListComponent,
+        MovieReviewComponent,
+        MovieReviewsPage
     ],
     imports: [
         BrowserModule,
@@ -24,7 +29,7 @@ import { PersonnelData } from '../providers/personnel-data';
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
-        MoviesListPage
+        MovieReviewsPage
     ],
     providers: [
         StatusBar,
