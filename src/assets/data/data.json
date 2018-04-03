@@ -1,0 +1,40 @@
+[
+    {
+        "movie": "Lord of the Rings - The Fellowship of the Ring",
+        "releaseDate": "12/19/2001",
+        "director": "Peter Jackson",
+        "actors": [
+            "Elijah Wood",
+            "Ian McKellen",
+            "Viggo Mortensen"
+        ],
+        "title": "A Golden Standard For Fantasy Films",
+        "review": "This movie brings you to a whole new world. Absolute amazing journey into Middle Earth. Watch it come to life!",
+        "rating": 5
+    }, {
+        "movie": "Blade Runner",
+        "releaseDate": "06/25/1982",
+        "director": "Ridley Scott",
+        "actors": [
+            "Harrison Ford",
+            "Sean Young",
+            "Rutger Hauer"
+        ],
+        "title": "An 80's Sci-Fi Noir",
+        "review": "An original and interesting fusion of sci-fi action and noir with a complex story.",
+        "rating": 4
+    }, {
+        "movie": "Iron Man",
+        "releaseDate": "05/02/2008",
+        "director": "Jon Favreau",
+        "actors": [
+            "Robert Downey Jr.",
+            "Gwyneth Paltrow",
+            "Terrence Howard",
+            "Jeff Bridges"
+        ],
+        "title": "A Super Hero Game Changer",
+        "review": "The character of Tony Stark has been molded so well for Robert Downey Jr. 2 hours of metal technological excitement!",
+        "rating": 5
+    }
+]
