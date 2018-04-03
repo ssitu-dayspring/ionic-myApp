@@ -11,7 +11,5 @@ export class MovieReviewComponent
 {
     @Input() movieReview: Review = null;
 
-    constructor() {
-
-    }
+    constructor() {}
 }

@@ -7,24 +7,22 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { MovieReviewsListComponent } from '../pages/home/components/movie-reviews-list.component';
-import { MovieReviewComponent } from '../pages/home/components/movie-review.component';
 
 import { MovieReviewsPage } from '../pages/home/movie-reviews.page';
 
 import { PersonnelData } from '../providers/personnel-data';
 
+import { MovieReviewsModule } from '../pages/home/movie-reviews.module';
+
 @NgModule({
     declarations: [
-        MyApp,
-        MovieReviewsListComponent,
-        MovieReviewComponent,
-        MovieReviewsPage
+        MyApp
     ],
     imports: [
         BrowserModule,
         IonicModule.forRoot(MyApp),
-        HttpClientModule
+        HttpClientModule,
+        MovieReviewsModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
