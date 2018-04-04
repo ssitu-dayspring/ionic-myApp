@@ -10,4 +10,5 @@ export class MovieReviewsListComponent {
     @Input() movieReviews: Review[];
 
     constructor() {}
+
 }

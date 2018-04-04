@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/observable';
 import { PersonnelData } from '../../providers/personnel-data';
 
 import { Review } from '../../models/review';
+import { AddMovieReviewPage } from '../add-movie-review/add-movie-review.page';
 
 @Component({
     selector: 'movie-reviews',
@@ -18,5 +19,9 @@ export class MovieReviewsPage {
         private personnelData: PersonnelData
     ) {
         this.movieReviews = this.personnelData.load();
+    }
+
+    public addMovieReview() {
+        this.navCtrl.push(AddMovieReviewPage);
     }
 }

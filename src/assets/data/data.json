@@ -3,7 +3,7 @@
         "movie": "Lord of the Rings - The Fellowship of the Ring",
         "releaseDate": "12/19/2001",
         "director": "Peter Jackson",
-        "actors": [
+        "cast": [
             "Elijah Wood",
             "Ian McKellen",
             "Viggo Mortensen"
@@ -15,7 +15,7 @@
         "movie": "Blade Runner",
         "releaseDate": "06/25/1982",
         "director": "Ridley Scott",
-        "actors": [
+        "cast": [
             "Harrison Ford",
             "Sean Young",
             "Rutger Hauer"
@@ -27,7 +27,7 @@
         "movie": "Iron Man",
         "releaseDate": "05/02/2008",
         "director": "Jon Favreau",
-        "actors": [
+        "cast": [
             "Robert Downey Jr.",
             "Gwyneth Paltrow",
             "Terrence Howard",

@@ -11,12 +11,15 @@ import { MyApp } from './app.component';
 import { MovieReviewsPage } from '../pages/home/movie-reviews.page';
 
 import { PersonnelData } from '../providers/personnel-data';
+import { ReviewsService } from '../services/reviews.service';
 
 import { MovieReviewsModule } from '../pages/home/movie-reviews.module';
+import { AddMovieReviewPage } from '../pages/add-movie-review/add-movie-review.page';
 
 @NgModule({
     declarations: [
-        MyApp
+        MyApp,
+        AddMovieReviewPage
     ],
     imports: [
         BrowserModule,
@@ -27,13 +30,15 @@ import { MovieReviewsModule } from '../pages/home/movie-reviews.module';
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
-        MovieReviewsPage
+        MovieReviewsPage,
+        AddMovieReviewPage
     ],
     providers: [
         StatusBar,
         SplashScreen,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
-        PersonnelData
+        PersonnelData,
+        ReviewsService
     ]
 })
 

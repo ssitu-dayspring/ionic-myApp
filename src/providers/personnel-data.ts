@@ -10,7 +10,7 @@ import { Personnel } from '../models/personnel';
 
 @Injectable()
 export class PersonnelData {
-    data: Personnel[];
+    data: Review[];
 
     constructor(
         public http: HttpClient

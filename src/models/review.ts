@@ -6,7 +6,7 @@ export class Review
     releaseDate: string;
     distributer?: string;
     director: Personnel;
-    actors: Personnel[];
+    cast: Personnel[];
     title: string;
     review: string;
     rating: number;
@@ -20,9 +20,9 @@ export class Review
 
         this.director = { name: json['director'], role: 'Director' };
 
-        this.actors = [];
-        for (let actor of json['actors']) {
-            this.actors.push({ name: actor, role: 'Actor' });
+        this.cast = [];
+        for (let actor of json['cast']) {
+            this.cast.push({ name: actor, role: 'Actor' });
         }
     }
 }
