@@ -5,7 +5,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { MovieReviewsListComponent } from './components/movie-reviews-list.component';
 import { MovieReviewComponent } from './components/movie-review.component';
 import { MovieReviewsPage } from './movie-reviews.page';
-import { PersonnelData } from '../../providers/personnel-data';
+import { ReviewData } from '../../providers/review-data';
 
 @NgModule({
     declarations: [
@@ -21,7 +21,7 @@ import { PersonnelData } from '../../providers/personnel-data';
         MovieReviewsPage
     ],
     providers: [
-        PersonnelData
+        ReviewData
     ]
 })
 
