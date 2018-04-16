@@ -41,17 +41,17 @@ export class AddMovieReviewPage {
         let cast = data['cast'].map((actor) => {
             return { name: actor.name, role: 'Actor' };
         });
-        //
-        // this.reviewsSvc.addReview({
-        //     movie: data['movie'],
-        //     director: data['director'],
-        //     releaseDate: data['releaseDate'],
-        //     cast: cast,
-        //     title: '',
-        //     review: '',
-        //     rating: 0,
-        //
-        // });
+
+        this.reviewsSvc.addReview({
+            movie: data['movie'],
+            director: data['director'],
+            releaseDate: data['releaseDate'],
+            cast: cast,
+            title: '',
+            review: '',
+            rating: 0,
+
+        });
 
         this.navCtrl.pop();
     }
