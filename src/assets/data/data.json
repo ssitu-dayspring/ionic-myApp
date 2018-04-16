@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "movie": "Lord of the Rings - The Fellowship of the Ring",
         "releaseDate": "12/19/2001",
         "director": "Peter Jackson",
@@ -12,6 +13,7 @@
         "review": "This movie brings you to a whole new world. Absolute amazing journey into Middle Earth. Watch it come to life!",
         "rating": 5
     }, {
+        "id": 2,
         "movie": "Blade Runner",
         "releaseDate": "06/25/1982",
         "director": "Ridley Scott",
@@ -24,6 +26,7 @@
         "review": "An original and interesting fusion of sci-fi action and noir with a complex story.",
         "rating": 4
     }, {
+        "id": 3,
         "movie": "Iron Man",
         "releaseDate": "05/02/2008",
         "director": "Jon Favreau",

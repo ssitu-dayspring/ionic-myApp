@@ -4,7 +4,6 @@ import { IonicPageModule } from 'ionic-angular';
 
 import { MovieReviewsListComponent } from './components/movie-reviews-list.component';
 import { MovieReviewComponent } from './components/movie-review.component';
-import { MovieReviewPopover } from './components/movie-review.popover';
 import { MovieReviewsPage } from './movie-reviews.page';
 import { ReviewData } from '../../providers/review-data';
 
@@ -12,8 +11,7 @@ import { ReviewData } from '../../providers/review-data';
     declarations: [
         MovieReviewsListComponent,
         MovieReviewComponent,
-        MovieReviewsPage,
-        MovieReviewPopover
+        MovieReviewsPage
     ],
     imports: [
         IonicPageModule.forChild(MovieReviewsPage),

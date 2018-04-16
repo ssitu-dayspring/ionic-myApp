@@ -2,6 +2,9 @@ import { Personnel } from './personnel';
 
 export class Review
 {
+    private static decrementer: number = -1;
+
+    id: number;
     movie: string;
     releaseDate: string;
     distributer?: string;
@@ -12,6 +15,7 @@ export class Review
     rating: number;
 
     constructor(json: any) {
+        this.id =          json['id'];
         this.movie =       json['movie'];
         this.releaseDate = json['releaseDate'];
         this.title =       json['title'];
@@ -24,5 +28,9 @@ export class Review
         for (let actor of json['cast']) {
             this.cast.push({ name: actor, role: 'Actor' });
         }
+    }
+
+    static getId() {
+        return this.decrementer --;
     }
 }

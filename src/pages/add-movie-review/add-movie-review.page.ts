@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, AbstractControl, Validators } from '@angular/forms';
 import { NavController } from 'ionic-angular';
 import { ReviewsService } from '../../services/reviews.service';
+import { Review } from '../../models/review';
 
 @Component({
     selector: 'add-movie-review',
@@ -43,6 +44,7 @@ export class AddMovieReviewPage {
         });
 
         this.reviewsSvc.addReview({
+            id: Review.getId(),
             movie: data['movie'],
             director: data['director'],
             releaseDate: data['releaseDate'],

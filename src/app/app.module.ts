@@ -23,7 +23,6 @@ import { ReviewsService } from '../services/reviews.service';
 
 import { MovieReviewsModule } from '../pages/home/movie-reviews.module';
 import { AddMovieReviewPage } from '../pages/add-movie-review/add-movie-review.page';
-import {MovieReviewPopover} from "../pages/home/components/movie-review.popover";
 
 
 @NgModule({
@@ -44,8 +43,7 @@ import {MovieReviewPopover} from "../pages/home/components/movie-review.popover"
     entryComponents: [
         MyApp,
         MovieReviewsPage,
-        AddMovieReviewPage,
-        MovieReviewPopover
+        AddMovieReviewPage
     ],
     providers: [
         StatusBar,
