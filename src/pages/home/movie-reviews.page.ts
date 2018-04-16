@@ -3,8 +3,6 @@ import { Store } from '@ngrx/store';
 import { NavController } from 'ionic-angular';
 import { Observable } from 'rxjs/observable';
 
-import { ReviewData } from '../../providers/review-data';
-
 import * as fromRoot from '../../store';
 import * as movieReviews from '../../store/movie-review/movie-review.actions';
 
@@ -22,8 +20,7 @@ export class MovieReviewsPage {
 
     constructor(
         public navCtrl: NavController,
-        public store: Store<fromRoot.State>,
-        private ReviewData: ReviewData
+        public store: Store<fromRoot.State>
     ) {
         this.store.dispatch(new movieReviews.LoadMovieReviewsAction());
     }

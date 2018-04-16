@@ -5,7 +5,8 @@ import { Review } from '../../models/review';
 
 export const ACTION = {
     LOAD_MOVIE_REVIEWS: type('[Movie Review] Load Movie Reviews'),
-    UPDATE_MOVIE_REVIEWS: type('[Movie Review] Update Movie Reviews')
+    UPDATE_MOVIE_REVIEWS: type('[Movie Review] Update Movie Reviews'),
+    ADD_MOVIE_REVIEW: type('[Movie Review] Add A Movie Review')
 };
 
 export class LoadMovieReviewsAction implements Action {
@@ -18,6 +19,13 @@ export class UpdateMovieReviewsAction implements Action {
     constructor(public payload: Review[]) {}
 }
 
+export class AddMovieReviewAction implements Action {
+    type = ACTION.ADD_MOVIE_REVIEW;
+
+    constructor(public payload: Review) {}
+}
+
 export type Actions
     = LoadMovieReviewsAction
-    | UpdateMovieReviewsAction;
+    | UpdateMovieReviewsAction
+    | AddMovieReviewAction;

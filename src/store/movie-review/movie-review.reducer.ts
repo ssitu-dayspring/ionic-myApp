@@ -17,6 +17,14 @@ export function reducer(state = initialState, action: movieReviews.Actions): Sta
                 movieReviews: (<movieReviews.UpdateMovieReviewsAction> action).payload
             });
         }
+        case movieReviews.ACTION.ADD_MOVIE_REVIEW: {
+            let movieReviews = state.movieReviews.slice();
+            movieReviews.push((<movieReviews.AddMovieReviewAction> action).payload);
+
+            return Object.assign({}, {
+                movieReviews: movieReviews
+            });
+        }
         default:
             return state;
     }

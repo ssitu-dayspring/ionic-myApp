@@ -1,20 +1,16 @@
 import { Injectable } from '@angular/core';
+import { Store } from '@ngrx/store';
+
+import * as fromRoot from '../store';
+import * as movieReviews from '../store/movie-review/movie-review.actions';
 
 import { Review } from '../models/review';
 
 @Injectable()
 export class ReviewsService {
-    private reviews: Review[] = [];
-
-    setReviews(reviews: Review[]) {
-        this.reviews = reviews;
-    }
+    constructor(private store: Store<fromRoot.State>) {}
 
     addReview(review: Review) {
-        this.reviews.push(review);
-    }
-
-    getReviews() {
-        return this.reviews;
+        this.store.dispatch(new movieReviews.AddMovieReviewAction(review));
     }
 }
