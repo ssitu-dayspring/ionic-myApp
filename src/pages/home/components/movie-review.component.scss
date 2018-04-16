@@ -2,11 +2,20 @@ ion-card {
     height: 500px;
 }
 
-.header ion-item {
+ion-card .header ion-item {
     background: #f9fafb;
 }
 
 .content ion-card-content {
     height: 100px;
     overflow-y: auto;
+}
+
+.options {
+    border: 1px solid #ccc;
+    width: 150px;
+    position: absolute;
+    z-index: 100;
+    top: 70px;
+    right: 40px;
 }

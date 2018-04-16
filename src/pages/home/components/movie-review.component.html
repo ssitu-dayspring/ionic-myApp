@@ -1,8 +1,20 @@
 <ion-card>
     <div class="header">
-        <ion-item>
-            <h2>{{ movieReview.movie }}</h2>
-            <p>{{ movieReview.releaseDate }}</p>
+        <ion-item class="item item-block">
+            <div class="item-inner">
+                <div class="input-wrapper" text-wrap>
+                    <span>
+                        <h2>{{ movieReview.movie }}</h2>
+                        <p>{{ movieReview.releaseDate }}</p>
+                    </span>
+                </div>
+
+                <button icon-only ion-button (click)="presentPopover($event)">
+                    <span class="button-inner">
+                        <ion-icon name="more" role="img" class="icon" ariel-label="more"></ion-icon>
+                    </span>
+                </button>
+            </div>
         </ion-item>
     </div>
 
