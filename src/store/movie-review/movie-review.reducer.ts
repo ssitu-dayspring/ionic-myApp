@@ -25,6 +25,16 @@ export function reducer(state = initialState, action: movieReviews.Actions): Sta
                 movieReviews: movieReviews
             });
         }
+        case movieReviews.ACTION.DELETE_MOVIE_REVIEW: {
+            let reviewId = (<movieReviews.DeleteMovieReviewAction> action).payload;
+            let movieReviews = state.movieReviews.filter((review: Review) => {
+                return review.id !== reviewId;
+            });
+
+            return Object.assign({}, {
+                movieReviews: movieReviews
+            });
+        }
         default:
             return state;
     }

@@ -19,3 +19,12 @@ ion-card .header ion-item {
     top: 70px;
     right: 40px;
 }
+
+.alert-button.btn-delete {
+    color: #f53d3d;
+}
+
+ion-action-sheet .action-sheet-button.action-sheet-destructive {
+    background: #f53d3d;
+    color: #fff;
+}
