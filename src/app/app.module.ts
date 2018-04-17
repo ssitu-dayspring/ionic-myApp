@@ -23,6 +23,7 @@ import { ReviewsService } from '../services/reviews.service';
 
 import { MovieReviewsModule } from '../pages/home/movie-reviews.module';
 import { AddMovieReviewPage } from '../pages/add-movie-review/add-movie-review.page';
+import { MovieReviewModalPage } from '../pages/modals/movie-review-modal.page';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { AddMovieReviewPage } from '../pages/add-movie-review/add-movie-review.p
     entryComponents: [
         MyApp,
         MovieReviewsPage,
-        AddMovieReviewPage
+        AddMovieReviewPage,
+        MovieReviewModalPage
     ],
     providers: [
         StatusBar,

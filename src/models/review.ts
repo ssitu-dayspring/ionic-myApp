@@ -33,4 +33,20 @@ export class Review
     static getId() {
         return this.decrementer --;
     }
+
+    static getEmptyReview(): Review {
+        return {
+            id: Review.getId(),
+            movie: '',
+            releaseDate: '',
+            director: {
+                'role': 'Director',
+                'name': ''
+            },
+            cast: [],
+            title: '',
+            review: '',
+            rating: undefined
+        }
+    }
 }

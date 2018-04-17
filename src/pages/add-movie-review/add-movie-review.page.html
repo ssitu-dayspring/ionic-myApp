@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-    <form [formGroup]="ngForm" (ngSubmit)="submit()" novalidate>
+    <form [formGroup]="ngForm" (ngSubmit)="onSubmit()" novalidate>
         <ion-item>
             <ion-label color="primary" floating>Movie Name</ion-label>
             <ion-input type="text" [formControl]="ngForm.controls.movie"></ion-input>
@@ -31,13 +31,38 @@
                 </button>
             </ion-item>
 
-            <div *ngFor="let actor of getAbstractControl('cast').controls; let i = index;">
-                <ion-item [formGroup]="actor">
-                    <ion-label color="default" stacked>Name</ion-label>
-                    <ion-input type="text" formControlName="name"></ion-input>
-                </ion-item>
-            </div>
+            <ion-list class="section-actors">
+                <ion-item-sliding *ngFor="let actor of getAbstractControl('cast').controls; let i = index;">
+                    <ion-item [formGroup]="actor">
+                        <ion-label color="default" stacked>Name</ion-label>
+                        <ion-input type="text" formControlName="name"></ion-input>
+                    </ion-item>
+
+                    <ion-item-options side="left">
+                        <button ion-button color="danger" (click)="removeActor(i)">
+                            <ion-icon name="trash"></ion-icon>
+                        </button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
         </div>
+
+        <ion-item>
+            <ion-label color="primary" floating>Title</ion-label>
+            <ion-input type="text" [formControl]="ngForm.controls.title"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" floating>Review</ion-label>
+            <ion-textarea [formControl]="ngForm.controls.review"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" floating>Stars</ion-label>
+            <ion-select [formControl]="ngForm.controls.stars">
+                <ion-option *ngFor="let s of [1,2,3,4,5]">{{ s }}</ion-option>
+            </ion-select>
+        </ion-item>
 
         <button ion-button
                 type="submit"
