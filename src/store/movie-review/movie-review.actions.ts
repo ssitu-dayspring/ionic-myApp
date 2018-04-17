@@ -7,6 +7,7 @@ export const ACTION = {
     LOAD_MOVIE_REVIEWS: type('[Movie Review] Load Movie Reviews'),
     UPDATE_MOVIE_REVIEWS: type('[Movie Review] Update Movie Reviews'),
     ADD_MOVIE_REVIEW: type('[Movie Review] Add Movie Review'),
+    EDIT_MOVIE_REVIEW: type('[Movie Review] Edit Movie Review'),
     DELETE_MOVIE_REVIEW: type('[Movie Review] Delete Movie Review')
 };
 
@@ -26,6 +27,12 @@ export class AddMovieReviewAction implements Action {
     constructor(public payload: Review) {}
 }
 
+export class EditMovieReviewAction implements Action {
+    type = ACTION.EDIT_MOVIE_REVIEW;
+
+    constructor(public payload: Review) {}
+}
+
 export class DeleteMovieReviewAction implements Action {
     type = ACTION.DELETE_MOVIE_REVIEW;
 
@@ -35,4 +42,6 @@ export class DeleteMovieReviewAction implements Action {
 export type Actions
     = LoadMovieReviewsAction
     | UpdateMovieReviewsAction
-    | AddMovieReviewAction;
+    | AddMovieReviewAction
+    | EditMovieReviewAction
+    | DeleteMovieReviewAction;

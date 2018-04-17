@@ -14,6 +14,10 @@ export class ReviewsService {
         this.store.dispatch(new movieReviews.AddMovieReviewAction(review));
     }
 
+    editReview(review: Review) {
+        this.store.dispatch(new movieReviews.EditMovieReviewAction(review));
+    }
+
     deleteReview(reviewId: number) {
         this.store.dispatch(new movieReviews.DeleteMovieReviewAction(reviewId));
     }

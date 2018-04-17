@@ -18,14 +18,18 @@ export class AddMovieReviewPage {
 
     ngForm: FormGroup;
     formSegment: string = MOVIE;
+    isNew: boolean = false;
 
     constructor(
         public navCtrl: NavController,
         public fb: FormBuilder,
         private reviewsSvc: ReviewsService
-    ) {
+    ) {}
+
+    ngOnInit() {
         if (!this.movieReview) {
             this.movieReview = Review.getEmptyReview();
+            this.isNew = true;
         }
 
         this.ngForm = this.fb.group({
@@ -81,21 +85,32 @@ export class AddMovieReviewPage {
 
     private submitData() {
         let data = this.ngForm.getRawValue();
+        let review = this.getReview(data);
+
+        if (this.isNew) {
+            this.reviewsSvc.addReview(review);
+        } else {
+            this.reviewsSvc.editReview(review);
+            console.log('Edited');
+        }
+
+        this.navCtrl.pop();
+    }
+
+    private getReview(data: any) {
         let cast = data['cast'].map((actor) => {
             return { name: actor.name, role: 'Actor' };
         });
 
-        this.reviewsSvc.addReview({
-            id: Review.getId(),
+        return {
+            id: this.isNew ? Review.getId() : this.movieReview.id,
             movie: data['movie'],
-            director: data['director'],
+            director: { name: data['director'], role: 'Director' },
             releaseDate: data['releaseDate'],
             cast: cast,
             title: data['title'],
             review: data['review'],
             rating: data['stars'],
-        });
-
-        this.navCtrl.pop();
+        };
     }
 }

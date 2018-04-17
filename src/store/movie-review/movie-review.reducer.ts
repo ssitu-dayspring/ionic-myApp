@@ -25,6 +25,20 @@ export function reducer(state = initialState, action: movieReviews.Actions): Sta
                 movieReviews: movieReviews
             });
         }
+        case movieReviews.ACTION.EDIT_MOVIE_REVIEW: {
+            let movieReview = (<movieReviews.EditMovieReviewAction> action).payload;
+            let movieReviews = state.movieReviews.map((review) => {
+                if (review.id === movieReview.id) {
+                    return movieReview;
+                }
+
+                return review;
+            });
+
+            return Object.assign({}, {
+                movieReviews: movieReviews
+            });
+        }
         case movieReviews.ACTION.DELETE_MOVIE_REVIEW: {
             let reviewId = (<movieReviews.DeleteMovieReviewAction> action).payload;
             let movieReviews = state.movieReviews.filter((review: Review) => {

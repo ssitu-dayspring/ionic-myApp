@@ -21,20 +21,20 @@ import { MovieReviewsPage } from '../pages/home/movie-reviews.page';
 import { ReviewData } from '../providers/review-data';
 import { ReviewsService } from '../services/reviews.service';
 
+import { AddMovieReviewModule } from '../pages/add-movie-review/add-movie-review.module';
 import { MovieReviewsModule } from '../pages/home/movie-reviews.module';
-import { AddMovieReviewPage } from '../pages/add-movie-review/add-movie-review.page';
 import { MovieReviewModalPage } from '../pages/modals/movie-review-modal.page';
 
 
 @NgModule({
     declarations: [
-        MyApp,
-        AddMovieReviewPage
+        MyApp
     ],
     imports: [
         BrowserModule,
         IonicModule.forRoot(MyApp),
         HttpClientModule,
+        AddMovieReviewModule,
         MovieReviewsModule,
         StoreModule.provideStore(reducer),
         StoreDevtoolsModule.instrumentOnlyWithExtension(),
@@ -44,7 +44,6 @@ import { MovieReviewModalPage } from '../pages/modals/movie-review-modal.page';
     entryComponents: [
         MyApp,
         MovieReviewsPage,
-        AddMovieReviewPage,
         MovieReviewModalPage
     ],
     providers: [

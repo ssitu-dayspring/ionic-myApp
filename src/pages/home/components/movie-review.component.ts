@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { ActionSheetController, AlertController, PopoverController } from 'ionic-angular';
+import {ActionSheetController, AlertController, ModalController, PopoverController} from 'ionic-angular';
 
 import { Review } from '../../../models/review';
 import { ReviewsService } from '../../../services/reviews.service';
+import { MovieReviewModalPage } from '../../modals/movie-review-modal.page';
 
 @Component({
     selector: 'movie-review',
@@ -15,6 +16,7 @@ export class MovieReviewComponent
 
     constructor(
         public actionSheetCtrl: ActionSheetController,
+        public modalCtrl: ModalController,
         public alertCtrl: AlertController,
         private movieReviewSvc: ReviewsService
     ) {}
@@ -26,7 +28,9 @@ export class MovieReviewComponent
                 {
                     text: 'Edit',
                     icon: 'create',
-                    handler: () => {}
+                    handler: () => {
+                        this.presentEditModal();
+                    }
                 }, {
                     text: 'Delete',
                     icon: 'trash',
@@ -42,6 +46,14 @@ export class MovieReviewComponent
         });
 
         actionSheet.present();
+    }
+
+    presentEditModal() {
+        let editReviewModal = this.modalCtrl.create(MovieReviewModalPage, {
+            movieReview: this.movieReview
+        });
+
+        editReviewModal.present();
     }
 
     presentConfirmDeleteAction() {
