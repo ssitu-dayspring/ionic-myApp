@@ -11,12 +11,13 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 
 import * as fromRoot from '../../store';
+import * as fromMovieReviews from '../../store/movie-review/movie-review.reducer';
 import * as movieReview from './movie-review.actions';
 
 import { ReviewData } from '../../providers/review-data';
+import { Review } from '../../models/review';
 
 @Injectable()
 export class MovieReviewEffects {
@@ -36,5 +37,27 @@ export class MovieReviewEffects {
             return this.reviewsData.load()
                 .takeUntil(nextSearch$)
                 .map(reviewsData => new movieReview.UpdateMovieReviewsAction(reviewsData))
+        });
+
+    @Effect()
+    orderMovieReviewsByName$: Observable<Action> = this.actions$
+        .ofType(movieReview.ACTION.ORDER_MOVIE_REVIEWS_BY_NAME)
+        .debounceTime(300)
+        .withLatestFrom(this.store)
+        .map(([action, state]) => state.movieReviews)
+        .switchMap((query: fromMovieReviews.State) => {
+            const nextSearch$ = this.actions$.ofType(movieReview.ACTION.ORDER_MOVIE_REVIEWS_BY_NAME).skip(1);
+
+            let movieReviews = query.movieReviews
+                .slice()
+                .sort((a: Review, b: Review) => {
+                    if (a.movie == b.movie) {
+                        return 0;
+                    }
+
+                    return a.movie < b.movie ? -1 : 1;
+                });
+
+            return Observable.of(new movieReview.UpdateMovieReviewsAction(movieReviews));
         });
 }

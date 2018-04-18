@@ -6,6 +6,7 @@ import { MovieReviewsListComponent } from './components/movie-reviews-list.compo
 import { MovieReviewComponent } from './components/movie-review.component';
 import { MovieReviewsPage } from './movie-reviews.page';
 import { MovieReviewModalPage } from '../modals/movie-review-modal.page';
+import { MovieReviewsPopoverPage } from './movie-reviews.popover';
 import { ReviewData } from '../../providers/review-data';
 
 import { AddMovieReviewModule } from '../add-movie-review/add-movie-review.module';
@@ -15,7 +16,8 @@ import { AddMovieReviewModule } from '../add-movie-review/add-movie-review.modul
         MovieReviewsListComponent,
         MovieReviewComponent,
         MovieReviewsPage,
-        MovieReviewModalPage
+        MovieReviewModalPage,
+        MovieReviewsPopoverPage
     ],
     imports: [
         IonicPageModule.forChild(MovieReviewsPage),
@@ -24,7 +26,8 @@ import { AddMovieReviewModule } from '../add-movie-review/add-movie-review.modul
     ],
     exports: [
         MovieReviewsPage,
-        MovieReviewModalPage
+        MovieReviewModalPage,
+        MovieReviewsPopoverPage
     ],
     providers: [
         ReviewData

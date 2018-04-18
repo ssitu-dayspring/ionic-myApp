@@ -21,4 +21,12 @@ export class ReviewsService {
     deleteReview(reviewId: number) {
         this.store.dispatch(new movieReviews.DeleteMovieReviewAction(reviewId));
     }
+
+    orderByDate() {
+        this.store.dispatch(new movieReviews.OrderMovieReviewsByDateAction());
+    }
+
+    orderByName() {
+        this.store.dispatch(new movieReviews.OrderMovieReviewsByNameAction());
+    }
 }
