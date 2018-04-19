@@ -46,8 +46,6 @@ export class MovieReviewEffects {
         .withLatestFrom(this.store)
         .map(([action, state]) => state.movieReviews)
         .switchMap((query: fromMovieReviews.State) => {
-            const nextSearch$ = this.actions$.ofType(movieReview.ACTION.ORDER_MOVIE_REVIEWS_BY_NAME).skip(1);
-
             let movieReviews = query.movieReviews
                 .slice()
                 .sort((a: Review, b: Review) => {
@@ -56,6 +54,26 @@ export class MovieReviewEffects {
                     }
 
                     return a.movie < b.movie ? -1 : 1;
+                });
+
+            return Observable.of(new movieReview.UpdateMovieReviewsAction(movieReviews));
+        });
+
+    @Effect()
+    orderMovieReviewsByDate$: Observable<Action> = this.actions$
+        .ofType(movieReview.ACTION.ORDER_MOVIE_REVIEWS_BY_DATE)
+        .debounceTime(300)
+        .withLatestFrom(this.store)
+        .map(([action, state]) => state.movieReviews)
+        .switchMap((query: fromMovieReviews.State) => {
+            let movieReviews = query.movieReviews
+                .slice()
+                .sort((a: Review, b: Review) => {
+                    if (a.releaseDate == b.releaseDate) {
+                        return 0;
+                    }
+
+                    return (new Date(a.releaseDate) < (new Date(b.releaseDate))) ? -1 : 1;
                 });
 
             return Observable.of(new movieReview.UpdateMovieReviewsAction(movieReviews));

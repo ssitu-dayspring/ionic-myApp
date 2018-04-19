@@ -2,7 +2,7 @@
     {
         "id": 1,
         "movie": "Lord of the Rings - The Fellowship of the Ring",
-        "releaseDate": "12/19/2001",
+        "releaseDate": "2001-12-19",
         "director": "Peter Jackson",
         "cast": [
             "Elijah Wood",
@@ -14,21 +14,36 @@
         "rating": 5
     }, {
         "id": 2,
-        "movie": "Blade Runner",
-        "releaseDate": "06/25/1982",
+        "movie": "Gladiator",
+        "releaseDate": "2000-05-05",
         "director": "Ridley Scott",
         "cast": [
-            "Harrison Ford",
-            "Sean Young",
-            "Rutger Hauer"
+            "Russel Crowe",
+            "Joaquin Phoenix",
+            "Oliver Reed",
+            "Connie Nielsen",
+            "Richard Harris"
         ],
-        "title": "An 80's Sci-Fi Noir",
-        "review": "An original and interesting fusion of sci-fi action and noir with a complex story.",
+        "title": "Roman History Resparked",
+        "review": "An epic tale following the rise of a gladiator in the colosseum",
         "rating": 4
     }, {
         "id": 3,
+        "movie": "The Good, the Bad and the Ugly",
+        "releaseDate": "1967-12-29",
+        "director": "Sergio Leone",
+        "cast": [
+            "Clint Eastwood",
+            "Eli Wallach",
+            "Lee Van Cleef"
+        ],
+        "title": "A Western Standard",
+        "review": "A simple plot following the journey of The Man With No Name and the adversaries he encounters.",
+        "rating": 5
+    }, {
+        "id": 4,
         "movie": "Iron Man",
-        "releaseDate": "05/02/2008",
+        "releaseDate": "2008-05-02",
         "director": "Jon Favreau",
         "cast": [
             "Robert Downey Jr.",
@@ -38,6 +53,32 @@
         ],
         "title": "A Super Hero Game Changer",
         "review": "The character of Tony Stark has been molded so well for Robert Downey Jr. 2 hours of metal technological excitement!",
+        "rating": 5
+    }, {
+        "id": 5,
+        "movie": "Ghostbusters",
+        "releaseDate": "1984-06-08",
+        "director": "Ivan Reitman",
+        "cast": [
+            "Bill Murray",
+            "Dan Aykroyd",
+            "Harold Ramis",
+            "Ernie Hudson"
+        ],
+        "title": "Don't Cross the Streamers!",
+        "review": "Light-hearted humor on the supernatural.",
+        "rating": 4
+    }, {
+        "id": 6,
+        "movie": "The Grand Budapest Hotel",
+        "releaseDate": "2014-03-07",
+        "director": "Wes Anderson",
+        "cast": [
+            "Ralph Fiennes",
+            "Tony Revolori"
+        ],
+        "title": "Great Humor From a Usual Villian",
+        "review": "An unnusual, yet splendid humor from Ralph Fiennes in this comedy revolving around a 20th century hotel",
         "rating": 5
     }
 ]

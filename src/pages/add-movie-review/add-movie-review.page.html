@@ -13,7 +13,9 @@
 
         <ion-item>
             <ion-label color="primary" floating>Release Date</ion-label>
-            <ion-input type="text" [formControl]="ngForm.controls.releaseDate"></ion-input>
+            <ion-datetime displayFormat="MMM DD YYYY"
+                          pickerFormat="MMM DD YYYY"
+                          [formControl]="ngForm.controls.releaseDate"></ion-datetime>
         </ion-item>
 
         <ion-item>
